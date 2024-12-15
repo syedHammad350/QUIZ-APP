@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="parent bg-gradient-to-r from-red-500 to-blue-500 h-[100vh] ">
+        <h1 class="H1 text-center text-black font-bold text-[50px]">QUIZ APP</h1>
+        <div class="form_container w-[80%] h-[550px] border-[4px] mx-auto border-black rounded-[30px] ">
+            <div class="forminputs block ">
+                <input class="user_name w-[100%] border-[2px] mt-[30px] rounded-[40px] border-black h-[60px]" type="text"  placeholder="ENTER YOUR NAME">
+                <input class="user_email w-[100%] border-[2px] mt-[30px] rounded-[40px] border-black h-[60px]" type="text"  placeholder="ENTER YOUR EMAIL">
+                <input class="user_rollno w-[100%] border-[2px] mt-[30px] rounded-[40px] border-black h-[60px]" type="text"  placeholder="ENTER YOUR ROLL NO">
+                <input class="user_institute w-[100%] border-[2px] mt-[30px] rounded-[40px] border-black h-[60px]" type="text"  placeholder="ENTER YOUR INSTITUTE">
+                <div class="btn w-[80px] mx-auto mt-[10px]">
+                    <button onclick="startquiz()" class="border-2 border-black  hover:bg-[green] rounded-[15px] h-[50px] w-[100%] hover:text-white ">submit</button>
+                </div>
+            </div>
+            <div class="main_div hidden">
+                <div class="qiuz_body">
+                    <div class="info_div border-[3px] border-[darkblue] mt-[10px] h-[100px] rounded-[15px] w-[80%] mx-auto">
+                      <div class="name_email flex justify-between mt-2">
+                        <h1 class="set_name">hammad</h1>
+                        <h1 class="set_email">hammad123@gmail.com</h1>
+
+                      </div>  
+                      <div class="roll_intitu flex justify-between mt-2">
+                        <h1 class="set_rollno">282375</h1>
+                        <h1 class="set_institute">smit</h1>
+
+                      </div>  
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+
+    </div>
+</body>
+<script src="app.js"></script>
+</html>
+
