@@ -10,7 +10,7 @@
     <div class="parent bg-gradient-to-r from-red-500 to-blue-500 h-[100vh] ">
         <h1 class="H1 text-center text-black font-bold text-[50px]">QUIZ APP</h1>
         <div class="form_container w-[80%] h-[550px] border-[4px] mx-auto border-black rounded-[30px] ">
-            <div class="forminputs block ">
+            <div class="forminputs  ">
                 <input class="user_name w-[100%] border-[2px] mt-[30px] rounded-[40px] border-black h-[60px]" type="text"  placeholder="ENTER YOUR NAME">
                 <input class="user_email w-[100%] border-[2px] mt-[30px] rounded-[40px] border-black h-[60px]" type="text"  placeholder="ENTER YOUR EMAIL">
                 <input class="user_rollno w-[100%] border-[2px] mt-[30px] rounded-[40px] border-black h-[60px]" type="text"  placeholder="ENTER YOUR ROLL NO">
@@ -19,7 +19,7 @@
                     <button onclick="startquiz()" class="border-2 border-black  hover:bg-[green] rounded-[15px] h-[50px] w-[100%] hover:text-white ">submit</button>
                 </div>
             </div>
-            <div class="main_div hidden">
+            <div class="main_div hidden ">
                 <div class="qiuz_body">
                     <div class="info_div border-[3px] border-[darkblue] mt-[10px] h-[100px] rounded-[15px] w-[80%] mx-auto">
                       <div class="name_email flex justify-between mt-2">
@@ -34,6 +34,19 @@
                       </div>  
     
                     </div>
+                </div>
+                <div class="quiz_div p-4 mt-4">
+                    <h1 class="  p-4 font-bold text-[30px]" id="ques">physics is the branch of?</h1>
+                    <ul id="quesoption " class="p-4 text-[25px]">
+                        <li>BOILOGY</li>
+                        <li>URDU</li>
+                        <li>SCIENCE</li>
+                        <li>ENGLISH</li>
+                    </ul>
+                    <div class="next_botton">
+                        <button id="btn" class="border-2 border-[green] h-[40px] w-[100%] rounded-[12px] hover:bg-[green] hover:text-[white]">NEXT</button>
+                    </div>
+
                 </div>
             </div>
         </div>
