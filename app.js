@@ -50,67 +50,67 @@ let quesarry=[
     },
     {
         num:'5',
-        question:'2 * 2 = ?',
+        question:'5*5 = ?',
         Options:{
-            a:'4',
-            b:'3',
-            c:'6',
-            d:'5',
+            a:'55',
+            b:'225',
+            c:'25',
+            d:'625',
 
         },
-        answer:'4',
+        answer:'25',
     },
     {
         num:'6',
-        question:'2 * 2 = ?',
+        question:'WHAT IS THE COLOR OF BLOOD?',
         Options:{
-            a:'4',
-            b:'3',
-            c:'6',
-            d:'5',
+            a:'YELLOW',
+            b:'PINK',
+            c:'GREEN',
+            d:'RED',
 
         },
-        answer:'4',
+        answer:'RED',
     },
     {
         num:'7',
-        question:'2 * 2 = ?',
+        question:'WHICH IS THE TALLEST BUILDING ON THE EARTH?',
         Options:{
-            a:'4',
-            b:'3',
-            c:'6',
-            d:'5',
+            a:'BURJ KHALIFA ',
+            b:'SHANGHAI TOWER',
+            c:'MERDEKA',
+            d:'LOTTE WORLD TOWER',
 
         },
-        answer:'4',
+        answer:'BURJ KHALIFA',
     },
     {
         num:'8',
-        question:'2 * 2 = ?',
+        question:'WHAT DOES THE HEART PUMP?',
         Options:{
-            a:'4',
-            b:'3',
-            c:'6',
-            d:'5',
+            a:'WATER',
+            b:'OXYGEN',
+            c:'BLOOD',
+            d:'SALIVA',
 
         },
-        answer:'4',
+        answer:'BLLOD',
     },
     {
         num:'9',
-        question:'2 * 2 = ?',
+        question:'WHAT IS THE NATIONAL COLOR OF PAKISTAN?',
         Options:{
-            a:'4',
-            b:'3',
-            c:'6',
-            d:'5',
+            a:'GREEN & WHITE ',
+            b:'GREEN & BLUE',
+            c:'GREEN & RED',
+            d:'GREEN & YELLOW',
 
         },
-        answer:'4',
+        answer:'GREEN & WHITE ',
     },
     {
         num:'10',
-        question:'2 * 2 = ?',
+        question:'HOW MANY RIVERS ARE IN PAKISTAN?',
         Options:{
             a:'4',
             b:'3',
@@ -118,10 +118,18 @@ let quesarry=[
             d:'5',
 
         },
-        answer:'4',
+        answer:'5',
     },
    
 ]
+let ques=document.getElementById('ques')
+let quesoption=document.getElementById('quesoption ').children
+// console.log(quesoption)
+
+for( let lioption of quesoption){
+    lioption.setAttribute('onclick','selectoption(this)')
+    lioption.classList.add('mt-1','cursor-pointer')
+}
 
 
 
@@ -146,6 +154,9 @@ let startquiz=()=>{
 
     }
     
+
+
+
     main_div.style.display='block'
    forminputs.style.display = 'none'
 
@@ -154,4 +165,18 @@ let startquiz=()=>{
     h1_rollno.innerHTML=user_rollno
     h1_institute .innerHTML=user_institute
 
+    ques.innerHTML= quesarry[quesCount].question
+    quesoption[0].innerHTML = quesarry[quesCount].options.a
+    quesoption[1].innerHTML = quesarry[quesCount].options.b
+    quesoption[2].innerHTML = quesarry[quesCount].options.c
+    quesoption[3].innerHTML = quesarry[quesCount].options.d
+  
+
+}
+let quesCount=0
+
+//  second_fuction
+
+let nextQues=()=>{
+    
 }
