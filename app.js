@@ -34,7 +34,7 @@ let quesarry=[
             d:'202',
 
         },
-        answer:'206 ',
+        answer:'206',
     },
     {
         num:'4',
@@ -76,7 +76,7 @@ let quesarry=[
         num:'7',
         question:'WHICH IS THE TALLEST BUILDING ON THE EARTH?',
         Options:{
-            a:'BURJ KHALIFA ',
+            a:'BURJ KHALIFA',
             b:'SHANGHAI TOWER',
             c:'MERDEKA',
             d:'LOTTE WORLD TOWER',
@@ -94,19 +94,19 @@ let quesarry=[
             d:'SALIVA',
 
         },
-        answer:'BLLOD',
+        answer:'BLOOD',
     },
     {
         num:'9',
         question:'WHAT IS THE NATIONAL COLOR OF PAKISTAN?',
         Options:{
-            a:'GREEN & WHITE ',
+            a:'GREEN & WHITE',
             b:'GREEN & BLUE',
             c:'GREEN & RED',
             d:'GREEN & YELLOW',
 
         },
-        answer:'GREEN & WHITE ',
+        answer:'GREEN & WHITE',
     },
     {
         num:'10',
@@ -139,7 +139,17 @@ let h1_rollno=document.querySelector('.set_rollno')
 let h1_institute=document.querySelector ('.set_institute')
 let form=document.querySelector('.form_container')
 let main_div=document.querySelector('.main_div')
+console.log(main_div)
 let forminputs=document.querySelector('.forminputs')
+let nxtbtn=document.getElementById('btn')
+// console.log(nxtbtn)
+
+let result=document.querySelector('.result')
+
+let tQues=document.getElementById('tQues')
+let cAns=document.getElementById('cAns')
+let wAns=document.getElementById('wAns')
+let tNum=document.getElementById('tNum')
 
 // function
 let startquiz=()=>{
@@ -166,17 +176,70 @@ let startquiz=()=>{
     h1_institute .innerHTML=user_institute
 
     ques.innerHTML= quesarry[quesCount].question
-    quesoption[0].innerHTML = quesarry[quesCount].options.a
-    quesoption[1].innerHTML = quesarry[quesCount].options.b
-    quesoption[2].innerHTML = quesarry[quesCount].options.c
-    quesoption[3].innerHTML = quesarry[quesCount].options.d
+    quesoption[0].innerHTML = quesarry[quesCount].Options.a
+    quesoption[1].innerHTML = quesarry[quesCount].Options.b
+    quesoption[2].innerHTML = quesarry[quesCount].Options.c
+    quesoption[3].innerHTML = quesarry[quesCount].Options.d
   
 
 }
 let quesCount=0
+let totalQues = quesarry.length
+let correctAns = 0
+let wrongAns = 0
+let totalNumber = 0
+nxtbtn.style.display='none'
 
 //  second_fuction
 
 let nextQues=()=>{
-    
+    if(quesCount<quesarry.length-1){
+        quesCount++
+
+        ques.innerHTML= quesarry[quesCount].question
+        quesoption[0].innerHTML = quesarry[quesCount].Options.a
+        quesoption[1].innerHTML = quesarry[quesCount].Options.b
+        quesoption[2].innerHTML = quesarry[quesCount].Options.c
+        quesoption[3].innerHTML = quesarry[quesCount].Options.d
+    }else{
+        result.style.display='block'
+     main_div.style.display='none'
+        tQues.innerHTML=totalQues
+        cAns.innerHTML=correctAns
+        wAns.innerHTML=wrongAns
+        tNum.innerHTML=totalNumber
+    }
+    for(let lioption of quesoption){
+        lioption.classList.remove('bg-[red]', 'bg-[green]', 'text-white','pointer-events-none')
+    }
+   
+
 }
+//  THIRD FUNCTION
+ let selectoption = (element)=>{
+    if(element.innerHTML==quesarry[quesCount].answer){
+        console.log('correct')
+        element.classList.add( 'bg-[green]'  ,'text-[white]')
+        correctAns++
+        totalNumber=totalNumber+10
+    }else{
+        console.log('wrong')
+        element.classList.add(   'bg-[red]','text-[white]')
+        wrongAns++
+        for(var liOption of quesoption){
+            if(liOption.innerHTML === quesarry[quesCount].answer){
+              liOption.classList.add('bg-[green]')
+            }
+          }
+      
+        }
+      
+        for(var liOption of quesoption){
+          liOption.classList.add('pointer-events-none')
+        }
+        nxtbtn.style.display='block'
+
+ }
+
+
+
