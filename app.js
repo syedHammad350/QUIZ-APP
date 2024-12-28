@@ -188,6 +188,7 @@ let totalQues = quesarry.length
 let correctAns = 0
 let wrongAns = 0
 let totalNumber = 0
+let skipQues = 0
 nxtbtn.style.display='none'
 
 //  second_fuction
@@ -208,10 +209,12 @@ let nextQues=()=>{
         cAns.innerHTML=correctAns
         wAns.innerHTML=wrongAns
         tNum.innerHTML=totalNumber
+       
     }
     for(let lioption of quesoption){
         lioption.classList.remove('bg-[red]', 'bg-[green]', 'text-white','pointer-events-none')
     }
+ 
    
 
 }
@@ -234,6 +237,8 @@ let nextQues=()=>{
           }
       
         }
+
+        
       nxtbtn.style.display='block'
         for(var liOption of quesoption){
           liOption.classList.add('pointer-events-none')
