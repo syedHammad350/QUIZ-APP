@@ -1,124 +1,124 @@
 let quesarry=[
     {
         num:'1',
-        question:'2 * 2 = ?',
+        question:'Q1  2 * 2 = ?',
         Options:{
-            a:'4',
-            b:'3',
-            c:'6',
-            d:'5',
+            a:'(A) 4',
+            b:'(B) 3',
+            c:'(C) 6',
+            d:'(D) 5',
 
         },
-        answer:'4',
+        answer:'(A) 4',
     },
 
     {
         num:'2',
-        question:'FULL FORM OF PSL ?',
+        question:'Q2 WHAT IS THE LARGEST CITY IN PAKISTAN ?',
         Options:{
-            a:'pakistion sasti league',
-            b:'pakistion supreame league',
-            c:'pakistion super league ',
-            d:'pakistion simple league',
+            a:'(A) KARACHI',
+            b:'(B) MULTAN',
+            c:'(C) LAHORE',
+            d:'(D) ISLAMABAD',
 
         },
-        answer:'pakistion super league ',
+        answer:'(A) KARACHI',
     },
     {
         num:'3',
-        question:'HOW MANY BONES ARE THERE IN THE HUMAN BODY?',
+        question:'Q3 HOW MANY BONES IN HUMAN BODY?',
         Options:{
-            a:'204',
-            b:'206',
-            c:'203',
-            d:'202',
+            a:'(A) 204',
+            b:'(B) 206',
+            c:'(C) 203',
+            d:'(D) 202',
 
         },
-        answer:'206',
+        answer:'(B) 206',
     },
     {
         num:'4',
-        question:'SUN RISES IN WHISVH DIRECTION',
+        question:'Q4 SUN RISES IN WHISVH DIRECTION',
         Options:{
-            a:'EAST',
-            b:'NORTH',
-            c:'SOUTH',
-            d:'WASTE',
+            a:'(A) EAST',
+            b:'(B) NORTH',
+            c:'(C) SOUTH',
+            d:'(D) WASTE',
 
         },
-        answer:'EAST',
+        answer:'(A) EAST',
     },
     {
         num:'5',
-        question:'5*5 = ?',
+        question:' Q5 5*5 = ?',
         Options:{
-            a:'55',
-            b:'225',
-            c:'25',
-            d:'625',
+            a:'(A) 55',
+            b:'(B) 225',
+            c:'(C) 25',
+            d:'(D) 625',
 
         },
-        answer:'25',
+        answer:'(C) 25',
     },
     {
         num:'6',
-        question:'WHAT IS THE COLOR OF BLOOD?',
+        question:'Q6 WHAT IS THE COLOR OF BLOOD?',
         Options:{
-            a:'YELLOW',
-            b:'PINK',
-            c:'GREEN',
-            d:'RED',
+            a:'(A) YELLOW',
+            b:'(B) PINK',
+            c:'(C) GREEN',
+            d:'(D) RED',
 
         },
-        answer:'RED',
+        answer:'(D) RED',
     },
     {
         num:'7',
-        question:'WHICH IS THE TALLEST BUILDING ON THE EARTH?',
+        question:'Q7 HOW MANY PRAYERS IN A DAY?',
         Options:{
-            a:'BURJ KHALIFA',
-            b:'SHANGHAI TOWER',
-            c:'MERDEKA',
-            d:'LOTTE WORLD TOWER',
+            a:'(A) 2',
+            b:'(B) 6',
+            c:'(C) 5',
+            d:'(D) 10',
 
         },
-        answer:'BURJ KHALIFA',
+        answer:'(C) 5',
     },
     {
         num:'8',
-        question:'WHAT DOES THE HEART PUMP?',
+        question:'Q8 WHAT DOES THE HEART PUMP?',
         Options:{
-            a:'WATER',
-            b:'OXYGEN',
-            c:'BLOOD',
-            d:'SALIVA',
+            a:'(A) WATER',
+            b:'(B) OXYGEN',
+            c:'(C) BLOOD',
+            d:'(D) SALIVA',
 
         },
-        answer:'BLOOD',
+        answer:'(C) BLOOD',
     },
     {
         num:'9',
-        question:'WHAT IS THE NATIONAL COLOR OF PAKISTAN?',
+        question:'Q9 HOW MANY DAYS IN A WEEK?',
         Options:{
-            a:'GREEN & WHITE',
-            b:'GREEN & BLUE',
-            c:'GREEN & RED',
-            d:'GREEN & YELLOW',
+            a:'(A) 8',
+            b:'(B) 5',
+            c:'(C) 6',
+            d:'(D) 7',
 
         },
-        answer:'GREEN & WHITE',
+        answer:'(D) 7',
     },
     {
         num:'10',
-        question:'HOW MANY RIVERS ARE IN PAKISTAN?',
+        question:'Q10 HOW MANY RIVERS ARE IN PAKISTAN?',
         Options:{
-            a:'4',
-            b:'3',
-            c:'6',
-            d:'5',
+            a:'(A) 4',
+            b:'(B) 3',
+            c:'(C) 6',
+            d:'(D) 5',
 
         },
-        answer:'5',
+        answer:'(D) 5',
     },
    
 ]
@@ -195,7 +195,7 @@ nxtbtn.style.display='none'
 let nextQues=()=>{
     if(quesCount<quesarry.length-1){
         quesCount++
-
+// nxtbtn.style.display='none'
         ques.innerHTML= quesarry[quesCount].question
         quesoption[0].innerHTML = quesarry[quesCount].Options.a
         quesoption[1].innerHTML = quesarry[quesCount].Options.b
@@ -219,13 +219,14 @@ let nextQues=()=>{
  let selectoption = (element)=>{
     if(element.innerHTML==quesarry[quesCount].answer){
         console.log('correct')
-        element.classList.add( 'bg-[green]'  ,'text-[white]')
+        element.classList.add( 'bg-[green]'  )
         correctAns++
         totalNumber=totalNumber+10
     }else{
         console.log('wrong')
-        element.classList.add(   'bg-[red]','text-[white]')
+        element.classList.add(   'bg-[red]')
         wrongAns++
+        
         for(var liOption of quesoption){
             if(liOption.innerHTML === quesarry[quesCount].answer){
               liOption.classList.add('bg-[green]')
@@ -233,11 +234,12 @@ let nextQues=()=>{
           }
       
         }
-      
+      nxtbtn.style.display='block'
         for(var liOption of quesoption){
           liOption.classList.add('pointer-events-none')
         }
-        nxtbtn.style.display='block'
+      
+        
 
  }
 
