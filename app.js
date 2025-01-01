@@ -38,7 +38,7 @@ let quesarry=[
     },
     {
         num:'4',
-        question:'Q4 SUN RISES IN WHISVH DIRECTION',
+        question:'Q4 SUN RISES IN WHICH DIRECTION',
         Options:{
             a:'(A) EAST',
             b:'(B) NORTH',
